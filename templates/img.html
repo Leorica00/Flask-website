@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %} Image {% endblock %}
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+{% endblock %}
+{% block content %}
+    <div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active" style="text-align: center">
+            <a href="#"><span class=""></span>resolution <br>
+                {{ images.img_width }} x {{ images.img_height }}</a>
+          </li>
+          <li class="active">
+            <a href="#"><span name="favorites" class="">
+
+            </span>id:   {{ images.img_id }}</a>
+          </li>
+          <li class="active">
+            <a href="{{ images.img_address }}"><span class="fa fa-sign-out mr-3">
+
+            </span> url: {{ images.img_address }} </a>
+          </li>
+            <li class="active" style="margin-top: 80px">
+                <form method="post" action="/user/{{ images.img_id }}">
+                    <span class="active" style="align-content: center; margin-left: 80px">
+                        <input type="submit" value="Add to favorites" name="add_to_fav">
+                    </span>
+
+                </form>
+          </li>
+        </ul>
+
+
+
+
+    	</nav>
+      <div id="content" class="p-4 p-md-5 pt-5">
+          <span class="lg-thumb">
+        <a href="{{ images.img_address }}">
+            <img src={{ images.img_url }} alt="" width="100%" height="auto" alt="">
+        </a>
+         </span>
+      </div>
+		</div>
+
+    <script src="{{ url_for("static", filename="js/jquery.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/popper.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/bootstrap.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/main.js") }}"></script>
+{% endblock %}

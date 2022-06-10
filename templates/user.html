@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title%} Home {% endblock %}
+{% block content %}
+
+{% for img in images %}
+        <span class="lg-thumb" style="margin-left: 2px">
+        <a href="/user/{{ img.img_id }}">
+            <img src="{{ img.img_url }}" width="468px" height="312px" style="margin-top: 5px" alt="">
+        </a>
+         </span>
+
+
+{% endfor %}
+
+{% endblock %}
+
+
+

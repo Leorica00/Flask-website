@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{#dasamatebli#}
+{% block content %}
+{% for img in favorites %}
+        <span class="lg-thumb">
+        <a href="/user/{{ img.fav_img_id }}">
+            <img src="{{ img.fav_img_url }} " width="468px" height="312px" style="margin-top: 5px" alt="">
+        </a>
+         </span>
+
+
+{% endfor %}
+{% endblock %}
+
+
